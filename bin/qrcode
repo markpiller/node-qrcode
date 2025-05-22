@@ -39,7 +39,8 @@ function parseOptions (args) {
     color: {
       light: args.lightcolor,
       dark: args.darkcolor
-    }
+    },
+    shape: args.shape
   }
 }
 
@@ -109,6 +110,12 @@ var argv = yargs
     description: 'Quiet zone size',
     group: 'Renderer options:',
     type: 'number'
+  })
+  .option('p', {
+    alias: 'shape',
+    description: 'QR code shape',
+    choices: ['square', 'circle'],
+    group: 'Renderer options:'
   })
   .option('l', {
     alias: 'lightcolor',

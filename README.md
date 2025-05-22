@@ -59,6 +59,7 @@ Renderer options:
   -w, --width       Image width (px)                                    [number]
   -s, --scale       Scale factor                                        [number]
   -q, --qzone       Quiet zone size                                     [number]
+  -p, --shape       QR code shape            [choices: "square", "circle"]
   -l, --lightcolor  Light RGBA hex color
   -d, --darkcolor   Dark RGBA hex color
   --small  Output smaller QR code to terminal                          [boolean]
@@ -72,6 +73,7 @@ Examples:
   qrcode "some text"                    Draw in terminal window
   qrcode -o out.png "some text"         Save as png image
   qrcode -d F00 -o out.png "some text"  Use red as foreground color
+  qrcode -p circle -o out.png "some text"  Generate circular QR code
 ```
 If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
@@ -738,6 +740,15 @@ See [Options](#options).
   Forces a specific width for the output image.<br>
   If width is too small to contain the qr symbol, this option will be ignored.<br>
   Takes precedence over `scale`.
+
+##### `shape`
+  Type: `String`<br>
+  Default: `square`<br>
+
+Shape of the final QR code. Possible values are `square` or `circle`.
+When set to `circle`, random decoy modules fill the empty corners so the
+overall symbol appears circular. These extra dots do not alter the encoded
+data.
 
 ##### `color.dark`
 Type: `String`<br>
