@@ -739,6 +739,14 @@ See [Options](#options).
   If width is too small to contain the qr symbol, this option will be ignored.<br>
   Takes precedence over `scale`.
 
+##### `shape`
+  Type: `String`<br>
+  Default: `square`<br>
+
+  Shape of the final QR code. Possible values are `square` or `circle`.
+  When set to `circle`, extra modules are added to fill the empty corners and
+  produce a circular appearance.
+
 ##### `color.dark`
 Type: `String`<br>
 Default: `#000000ff`
